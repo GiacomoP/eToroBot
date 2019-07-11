@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 def fetch_all_stocks(token, stocks, page_size=None):
-    # Don't handle the referenced list
+    # Don't handle the referenced list directly
     stocks = copy.deepcopy(stocks)
 
     request_headers = {
