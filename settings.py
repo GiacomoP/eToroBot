@@ -15,7 +15,7 @@ ETORO_USERNAME = os.getenv("ETORO_USERNAME")
 ETORO_PASSWORD = os.getenv("ETORO_PASSWORD")
 
 # Application settings
-CHROMEDRIVER_PATH = os.getenv("CHROMEDRIVER_PATH")
+WEBDRIVER_PATH = os.getenv("WEBDRIVER_PATH")
 LOGGING_LEVEL = logging.getLevelName(os.getenv("LOGGING_LEVEL"))
 
 STOCKS = [

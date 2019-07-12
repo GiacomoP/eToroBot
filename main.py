@@ -3,8 +3,8 @@ import locale
 import logging
 import operator
 
-from settings import XIGNITE_TOKEN, XIGNITE_STOCK_LIMIT, STOCKS, LOGGING_LEVEL
-from libs import xignite
+from settings import ETORO_USERNAME, ETORO_PASSWORD, XIGNITE_TOKEN, XIGNITE_STOCK_LIMIT, STOCKS, LOGGING_LEVEL
+from libs import xignite, etoro
 from utils import format_ranked_stocks_by_volume, format_ranked_stocks_with_price
 
 
@@ -33,4 +33,8 @@ message = ">> \U0001F1EC\U0001F1E7  DAILY performance of LONDON's stocks \U0001F
     "Finally, here are the 5 WORST LOSERS:\n" \
     f"{format_ranked_stocks_with_price(worst_stocks)}." \
 
-logger.info(message)
+logger.info("Status message generated", extra={"content": message})
+
+etoro.post_status(ETORO_USERNAME, ETORO_PASSWORD, message)
+
+logger.info("Status message posted successfully.")
